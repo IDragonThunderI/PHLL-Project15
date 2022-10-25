@@ -13,16 +13,19 @@ struct Train
 
 int main()
 {
+	system("chcp 1251");
+	system("cls");
+
 	Train a;
 	int n;
 	
-	fstream f("f.dat");
-	if (!f)
+	fstream f;
+	f.open("f.dat", ios::in | ios::out | ios::trunc);
+	if (!f.is_open())
 	{
 		cout << "file error!";
 		exit(1);
 	}
-	
 	cout << "Enter amount of flights: ";
 	cin >> n;
 	
