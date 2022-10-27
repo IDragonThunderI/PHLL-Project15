@@ -1,4 +1,4 @@
-#include <iostream>
+﻿#include <iostream>
 #include <fstream>
 using namespace std;
 
@@ -26,20 +26,20 @@ int main()
 		cout << "file error!";
 		exit(1);
 	}
-	cout << "������� ���������� ������: ";
+	cout << "Введите количество рейсов: ";
 	cin >> n;
 	
 	for (int i = 0; i < n; i++)
 	{
-		cout << "\nEnter train number: ";
+		cout << "\nВведите номер поезда: ";
 		cin >> a.number;
-		cout << "\nEnter destination: ";
+		cout << "\nВведите пункт прибытия: ";
 		cin >> a.station;
-		cout << "\nEnter departure time (Example: 06:00; 09:30; 15:00): ";
+		cout << "\nВведите время отправки (Пример: 06:00; 09:30; 15:00): ";
 		cin >> a.time_start;
-		cout << "\nEnter travel time: ";
+		cout << "\nВведите время в пути: ";
 		cin >> a.time_in_way;
-		cout << "\nEnter ticket availability (YES or NO): ";
+		cout << "\nВведите наличие билетов (Да или Нет): ";
 		cin >> a.ticket;
 		cout << endl;
 		
@@ -49,16 +49,16 @@ int main()
 	char searching_station[30];
 	char searching_time_A[6];
 	char searching_time_B[6];
-	cout << "\nEnter desired destination: ";
+	cout << "\nВведите искомый пункт прибытия: ";
 	cin >> searching_station;
-	cout << "\nEnter the beginning of the interval of the desired departure time (Example: 06:00; 09:30; 15:00): ";
+	cout << "\nВведите начало интервала искомого времени отправки (Пример: 06:00; 09:30; 15:00): ";
 	cin >> searching_time_A;
-	cout << "\nEnter the end of the interval of the desired departure time (Example: 06:00; 09:30; 15:00): ";
+	cout << "\nВведите конец интервала искомого времени отправки (Пример: 06:00; 09:30; 15:00): ";
 	cin >> searching_time_B;
 
 	f.seekp(0);
 	
-	cout << "\n\nSuitable flights found: " << endl;
+	cout << "\n\nНайденные подходящие рейсы: " << endl;
 	for (int i = 0; i < n; i++)
 	{
 		f >> a.number >> a.station >> a.time_start >> a.time_in_way >> a.ticket;
@@ -68,7 +68,7 @@ int main()
 	}
 
 	int searching_number;
-	cout << "\n\nEnter desired train number: ";
+	cout << "\n\nВведите искомый номер поезда: ";
 	cin >> searching_number;
 
 	f.seekp(0);
@@ -78,7 +78,7 @@ int main()
 		f >> a.number >> a.station >> a.time_start >> a.time_in_way >> a.ticket;
 
 		if (searching_number == a.number)
-			cout << "\nAvailability of tickets for the selected flight: " << endl << searching_station << "; " << searching_number << " => " << a.ticket << endl << endl;
+			cout << "\nНаличие билетов на выбранный рейс: " << endl << searching_station << "; " << searching_number << " => " << a.ticket << endl << endl;
 	}
 	
 	f.close();
