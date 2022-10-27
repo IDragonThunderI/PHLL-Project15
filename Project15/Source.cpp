@@ -26,7 +26,7 @@ int main()
 		cout << "file error!";
 		exit(1);
 	}
-	cout << "Enter amount of flights: ";
+	cout << "Введите количество рейсов: ";
 	cin >> n;
 	
 	for (int i = 0; i < n; i++)
